@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-        <div class="sidebar-pane" id="formTab"  >
+            <div class="sidebar-pane" id="formTab"  >
                 <h1 class="sidebar-header">
                     Create data <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
@@ -137,9 +137,8 @@
                         </div>
                         <div class="alert alert-danger" ng-repeat="e in errors">@{{e}}</div>
                        
-                            <button   ng-show="processing==false" class="btn btn-primary pull-right" >SAVE</button>
-                            <div   ng-show="processing==true" class="alert alert-info">Please wait...</button>
-                        
+                        <button ng-show="processing==false" class="btn btn-primary pull-right" >SAVE</button>
+                        <button ng-show="processing==true" class="alert alert-info">Please wait...</button>
                         
                     </form>
                 </div>
@@ -151,6 +150,6 @@
     </div>
 </div>
 
-    <div id="map" class="sidebar-map"></div>
+<div id="map" class="sidebar-map"></div>
 
 @endsection
