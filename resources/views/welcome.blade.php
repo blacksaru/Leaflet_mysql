@@ -5,14 +5,14 @@
         <div class="sidebar-tabs">
             <ul role="tablist">
                 <li><a href="#filtersTab" role="tab"><i class="fa fa-bars"></i></a></li>
-                <li><a href="#infoTab" role="tab"><i class="fas fa-info"></i></a></li>
                 <li><a href="#formTab" role="tab"><i class="fa fa-plus"></i></a></li>
+                <li><a href="#infoTab" role="tab"><i class="fas fa-info"></i></a></li>
             </ul>
         </div>
         <div class="sidebar-content"  >
             <div class="sidebar-pane" id="filtersTab">
                 <h1 class="sidebar-header" id="tlac">
-                    CASES @{{totalCases}}
+                    EXPOSURE COUNT: @{{totalCases}}
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
                 <!--Map Selection filters-->
@@ -21,15 +21,11 @@
                       
                         <div class="btn-group mt-3">
                             <button ng-class="{'btn':true ,'btn-primary':viewType=='pod','btn-light':viewType!='pod'}" type="button" ng-click="switchView('pod')"> 
-                                <i class="fa fa-map"> </i> OSM
-                            </button>
-                            <button ng-class="{'btn':true ,'btn-primary':viewType=='mapycz','btn-light':viewType!='mapycz'}" type="button" ng-click="switchView('mapycz')">
-                                <i class="fa fa-road"></i> MAPY.CZ
+                                <i class="fa fa-map"> </i> MAP
                             </button>
                             <button ng-class="{'btn':true ,'btn-primary':viewType=='table','btn-light':viewType!='table'}" type="button" ng-click="switchView('table')">
                                 <i class="fa fa-table"></i>
                                 TABLE
-                            
                             </button>
                          
                         </div>
@@ -37,8 +33,9 @@
                     </div>
                 </div>
 
-                <!--Contact Types filters -->
+		<!--Contact Types filters -->
                 <div class="row mt-5">
+                <label class="label mb-2"> FILTER BY TYPE</label>
                     <div class="col-md-8">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" ng-model="filters.casual" value="casual"
@@ -137,20 +134,20 @@
             <!-- PROJECT INFO TAB -->
             <div class="sidebar-pane" id="infoTab">
                 <h1 class="sidebar-header">
-                    Project result
+                    Website Information 
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
 
                 <div class="lorem">
-                    <b>INFO</b>
+                    <b>Using Crowd Sourcing to track community cases</b>
                 </div>
             </div>
 
         <div class="sidebar-pane" id="formTab"  >
                 <h1 class="sidebar-header">
-                    Create data <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                    Insert Record <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
-                <h4 style="width: 300px"> REPORT COVID CASE </h4>
+                <h4 style="width: 300px"> Share Locations Visited </h4>
                 
                 <div class="form" style="width: 15vw; color:rgb(220,31,37)">
                     <form method="post" ng-submit="submitForm()">
@@ -217,7 +214,7 @@
                             <textarea ng-model="form.comments" class="form-control" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Please enter your email or Website Reference</label>
+                            <label>Enter URL if you have sourced this information</label>
                             <input type="text" ng-model="form.source" class="form-control">
                         </div>
                         <div class="form-group">
@@ -243,16 +240,16 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Submitted By</label>
+                            <label>Submitted By (your name)</label>
                             <input type="text" ng-model="form.submitted_by" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
                             <input type="text" ng-model="form.email" class="form-control">
+                            <label>Email will not be shown in results</label>
+                            <label>Email is used to track multiple venues</label>
+                            <label>Please use the same one for multiple entries</label>
                         </div>
-                     
-                     
-
                        
                         <div class="alert alert-danger" ng-repeat="e in errors">@{{e}}</div>
                        
