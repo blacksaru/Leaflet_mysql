@@ -28,3 +28,13 @@ body,
 .uib-time input{
     width:100% !important;
 }
+.modal{
+    z-index: 4000!important;
+}
+.required{
+    font-weight: bolder;
+    font-size:110%;
+}
+.nowrap {
+    white-space:nowrap;
+}
